@@ -1,11 +1,17 @@
-cmake_minimum_required(VERSION 3.4)
-project(lab03)
+cmake_minimum_required(VERSION 3.10)
+project(lab04)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+option(BUILD_TESTS "Build tests" OFF)
 
 add_subdirectory(formatter_lib)
 add_subdirectory(formatter_ex_lib)
 add_subdirectory(solver_lib)
 add_subdirectory(hello_world_application)
 add_subdirectory(solver_application)
+
+install(DIRECTORY formatter_lib/ DESTINATION include)
+install(DIRECTORY formatter_ex_lib/ DESTINATION include)
+install(DIRECTORY solver_lib/ DESTINATION include)
